@@ -1,0 +1,36 @@
+import debugpy
+try:
+    debugpy.listen(("localhost", 9501))
+    print("Waiting for debugger attach")
+    debugpy.wait_for_client()
+except Exception as e:
+    pass
+
+==============================================================
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debug",
+            "type": "debugpy",
+            "request": "launch",
+            "justMyCode": false,
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "debug_9501",
+            "type": "debugpy",
+            "request": "attach",
+            "justMyCode": false,
+            "connect": {
+                "host": "localhost",
+                "port": 9501
+            }
+        },
+    ]
+}
+
+
