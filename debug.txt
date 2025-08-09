@@ -33,4 +33,16 @@ except Exception as e:
     ]
 }
 
+==============================================================
+
+pyrightconfig.json
+
+{
+    "exclude": [
+        "Data",
+        "**/node_modules", 
+        "**/__pycache__", 
+        "**/images"
+    ]
+}
 
